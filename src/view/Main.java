@@ -224,7 +224,51 @@ public class Main {
                         }
                         break;
                         case "e": {
-
+                            templateFindPerson();
+                            String pick = scanner.nextLine();
+                            switch (pick) {
+                                case "1": {
+                                    managementPerson.findByNameperson();
+                                }
+                                break;
+                                case "2": {
+                                    managementPerson.findByAgePerson();
+                                }
+                                break;
+                                case "3": {
+                                    managementPerson.findByAddressPerson();
+                                }
+                                break;
+                                case "4": {
+                                    managementPerson.findByPhonePerson();
+                                }
+                                break;
+                                default: {
+                                    System.out.println("Wrong input");
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
+                case "4": {
+                    System.out.println("Select the type of personnel you want to arrange");
+                    System.out.println("Enter a: To sort doctor information");
+                    System.out.println("Enter b: To sort preventive doctor information");
+                    System.out.println("Enter c: To sort nurse information");
+                    System.out.println("Enter d: To sort patient information");
+                    String type = scanner.nextLine();
+                    switch (type) {
+                        case "a": {
+                            templateSort();
+                            String pick = scanner.nextLine();
+                            switch (pick) {
+                                case "1" : {
+                                    managementDoctor.sortByIdDoctor();
+                                }
+                            }
                         }
                     }
                 }
