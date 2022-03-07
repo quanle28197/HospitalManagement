@@ -2,6 +2,8 @@ package view;
 
 import java.util.Scanner;
 
+import static view.Main.menu;
+
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
     public static ManagementPerson managementPerson = new ManagementPerson();
@@ -74,7 +76,7 @@ public class Main {
                         }
                         break;
                         case "d": {
-                            System.out.println( "Show list of patient");
+                            System.out.println("Show list of patient");
                             managementPatient.showPatient();
                         }
                         break;
@@ -265,7 +267,7 @@ public class Main {
                             templateSort();
                             String pick = scanner.nextLine();
                             switch (pick) {
-                                case "1" : {
+                                case "1": {
                                     managementDoctor.sortByIdDoctor();
                                 }
                                 break;
@@ -423,7 +425,7 @@ public class Main {
                     System.out.println("Select the type of personnel you want to remove");
                     System.out.println("Enter a: To remove doctor information");
                     System.out.println("Enter b: To remove preventive doctor information");
-                    System.out.println("Enter c: To remove nurse information" );
+                    System.out.println("Enter c: To remove nurse information");
                     System.out.println("Enter d: To remove patient information");
                     System.out.println("Enter e: To remove personnel information");
                     String type = scanner.nextLine();
@@ -511,8 +513,10 @@ public class Main {
                         }
                         break;
                     }
-                }while (!choice.equals("9"));
+                }
+                while (!choice.equals("9")) ;
             }
+        }
             public static Person inputinformation() {
                 System.out.println("Enter name: ");
                 String name = scanner.nextLine();
@@ -542,7 +546,129 @@ public class Main {
                 managementPerson.addPerson(doctor);
                 managementDoctor.addDoctor(doctor);
             }
-        }
 
+
+            public static void addPreventiveDoctor() {
+                System.out.println("Enter preventive doctor information");
+                Person person = inputinformation();
+                System.out.println("Enter id preventive doctor:");
+                String idPreventiveDoctor = scanner.nextLine();
+                System.out.println("Enter position: ");
+                String positionPreventiveDoctor = scanner.nextLine();
+                System.out.println("Enter level salary: ");
+                int levelSalaryPreventiveDoctor = scanner.nextInt();
+                PreventiveDoctor preventiveDoctor = new PreventiveDoctor(person, idPreventiveDoctor, positionPreventiveDoctor, levelSalaryPreventiveDoctor);
+                managementPerson.addPerson(preventiveDoctor);
+                managamentPreventiveDoctor.addpreventiveDoctor(preventiveDoctor);
+            }
+
+            public static void addNurse() {
+                System.out.println("Enter nurse information: ");
+                Person person = inputinformation();
+                System.out.println("Enter id nurse");
+                String idNurse = scanner.nextLine();
+                System.out.println("Enter salary level: ");
+                int levelNurse = scanner.nextInt();
+                Nurse nurse = new Nurse(person, idNurse, levelNurse);
+                managementPerson.addPerson(nurse);
+                managementNurse.addNurse(nurse);
+            }
+
+
+            public static void addPatient() {
+                System.out.println("Enter patient information");
+                Person person = inputinformation();
+                System.out.println("Enter id patient: ");
+                String idPatient = scanner.nextLine();
+                System.out.println("Enter the name of the acquired disease");
+                String diseases = scanner.nextLine();
+                System.out.println("enter patient status");
+                String status = scanner.nextLine();
+                System.out.println("Enter height: ");
+                double height = scanner.nextDouble();
+                scanner.nextLine();
+                System.out.println("Enter weight: ");
+                double weight = scanner.nextDouble();break;
+                scanner.nextLine();
+                System.out.println("Enter the number of days of hospitalization");
+                int dayInHospital = scanner.nextInt();
+                scanner.nextLine();
+                System.out.println("Enter the type of prevention");
+                String typeRoom = scanner.nextLine();
+                System.out.println("Enter id room: ");
+                int idRoom = scanner.nextInt();
+                Patient patient = new Patient(person, idPatient, diseases, status, height, weight, dayInHospital, typeRoom, idRoom);
+                managementPerson.addPerson(patient);
+                managementPatient.addPatient(patient);
+            }
+
+            private static void templateFind() {
+                System.out.println("Select search type");
+                System.out.println("1. Search by code");
+                System.out.println("2. Search by name");
+                System.out.println("3. Search by age");
+                System.out.println("4. Search by address");
+                System.out.println("5. Search by phone number");
+            }
+
+            private static void templateFindPerson() {
+                System.out.println("Select search type: ");
+                System.out.println("1. Search by name");
+                System.out.println("2. Search by age");
+                System.out.println("3. Search by address");
+                System.out.println("4. Search by phone number");
+            }
+
+            private static void templateSort() {
+                System.out.println("Select sort type: ");
+                System.out.println("1. Sort by code");
+                System.out.println("2. Sort by name");
+                System.out.println("3. Sort by age");
+                System.out.println("4. Sort by salary level");
+            }
+
+            private static void templateSortPatient() {
+                System.out.println("Select sort type: ");
+                System.out.println("1. Sort by patient code");
+                System.out.println("2. Sort by patient name");
+                System.out.println("3. Sort by patient age");
+                System.out.println("4. Sort by illness ");
+                System.out.println("5. Sort by room number");
+                System.out.println("6. Sort by type room");
+                System.out.println("7. Sort by day in hospital");
+            }
+
+            private static void templateWriteFile() {
+                System.out.println("Select the list to save");
+                System.out.println("a. Save doctor list");
+                System.out.println("b. Save preventive doctor list");
+                System.out.println("c. Save nurse list");
+                System.out.println("d. Save patient list");
+            }
+
+            private static void templateReadFile() {
+                System.out.println("Select the list to read");
+                System.out.println("a. Read doctor list");
+                System.out.println("b. Read preventive doctor list");
+                System.out.println("c. Read nurse list");
+                System.out.println("d. Read patient list");
+            }
+
+            private static void menu() {
+                System.out.println("");
+                System.out.println("--Menu");
+                System.out.println("------------------------------------------");
+                System.out.println("1. Add personnel ");
+                System.out.println("2. Show list personnel");
+                System.out.println("3. Search personnel");
+                System.out.println("4. Sort personnel");
+                System.out.println("5. Edit personnel information");
+                System.out.println("6. Remove personnel information");
+                System.out.println("7. Save to CSV");
+                System.out.println("8. Read file personnel");
+                System.out.println("9. Exit");
+                System.out.println("------------------------------------------");
+                System.out.println("Enter your select: ");
+            }
     }
 }
