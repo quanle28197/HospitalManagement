@@ -1,122 +1,161 @@
-public class Patient extends Person implements Serializable {
-    private static final long serialVersionUID = -6500665823330706018L;
-    private String idPatitent;
-    private String diseases;
-    private String status;
-    private double height;
-    private double weight;
-    private int daysInHospital;
-    private String typeRoom;
-    private int idRoom;
+public class ManagementNurse implements Serializable {
+    public List<Nurse> nurseList;
+    Scanner scanner = new Scanner(System.in);
+    IOScanner ioScanner = new IOScanner();
 
-    public Patient() {
+    public ManagementNurse() {
+        this.nurseList = new ArrayList<>();
     }
 
 
-    public Patient(String idPatitent, String name, int age, String address, String gender, String phone, String diseases, String status, double height, double weight, int daysInHospital, String typeRoom, int idRoom) {
-        super(name, age, address, gender, phone);
-        this.idPatitent = idPatitent;
-        this.diseases = diseases;
-        this.status = status;
-        this.height = height;
-        this.weight = weight;
-        this.daysInHospital = daysInHospital;
-        this.typeRoom = typeRoom;
-        this.idRoom = idRoom;
+    public void showNurse() {
+        for (Nurse nurses : nurseList) {
+            System.out.println(nurses.toString());
+        }
     }
 
-    public Patient(Person person, String idPatitent, String diseases, String status, double height, double weight, int daysInHospital, String typeRoom, int idRoom) {
-        super(person.getName(), person.getAge(), person.getAddress(), person.getGender(), person.getPhone());
-        this.idPatitent = idPatitent;
-        this.diseases = diseases;
-        this.status = status;
-        this.height = height;
-        this.weight = weight;
-        this.daysInHospital = daysInHospital;
-        this.typeRoom = typeRoom;
-        this.idRoom = idRoom;
+    public void addNurse(Nurse nurse) {
+        this.nurseList.add(nurse);
     }
 
-    public String getIdPatitent() {
-        return idPatitent;
+    public void findByIdNurse(){
+        System.out.print("nhập mã y tá cần tìm: ");
+        String id = scanner.nextLine();
+        int count = 0;
+        for (Nurse nurse: nurseList){
+            if(nurse.getIdNurse().equals(id)){
+                System.out.println(nurse);
+                count++;
+            }
+        }
     }
 
-    public void setIdPatitent(String idPatitent) {
-        this.idPatitent = idPatitent;
+    public void findByNameNurse(){
+        System.out.print("nhập tên cần tìm: ");
+        String name = scanner.nextLine();
+        int count = 0;
+        for (Nurse nurse : nurseList){
+            if(nurse.getName().equals(name)){
+                System.out.println(nurse);
+                count++;
+            }
+        }
     }
 
-    public String getDiseases() {
-        return diseases;
+    public void findByAgeNurse(){
+        System.out.print("nhập số tuổi cần tìm: ");
+        int age = scanner.nextInt();
+        scanner.nextLine();
+        int count = 0;
+        for (Nurse nurse : nurseList){
+            if(nurse.getAge() == age){
+                System.out.println(nurse);
+                count++;
+            }
+        }
     }
 
-    public void setDiseases(String diseases) {
-        this.diseases = diseases;
+    public void findByPhoneNurse(){
+        System.out.print("nhập số điện thoại cần tìm: ");
+        String phone = scanner.nextLine();
+        int count = 0;
+        for (Nurse nurse : nurseList){
+            if(nurse.getPhone().equals(phone)){
+                System.out.println(nurse);
+                count++;
+            }
+        }
     }
 
-    public String getStatus() {
-        return status;
+    public void findByAddressNurse(){
+        System.out.print("nhập địa chỉ cần tìm: ");
+        String address = scanner.nextLine();
+        int count = 0;
+        for (Nurse nurse : nurseList){
+            if(nurse.getAddress().equals(address)){
+                System.out.println(nurse);
+                count++;
+            }
+        }
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void sortByIdNurse(){
+        Collections.sort(nurseList, new Comparator<Nurse>() {
+            @Override
+            public int compare(Nurse o1, Nurse o2) {
+                return o1.getIdNurse().compareTo(o2.getIdNurse());
+            }
+        });
+        showNurse();
     }
 
-    public double getHeight() {
-        return height;
+    public void sortByNameNurse(){
+        Collections.sort(nurseList, new Comparator<Nurse>() {
+            @Override
+            public int compare(Nurse o1, Nurse o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        showNurse();
     }
 
-    public void setHeight(double height) {
-        this.height = height;
+    public void sortByLevelSalaryNurse(){
+        Collections.sort(nurseList, new Comparator<Nurse>() {
+            @Override
+            public int compare(Nurse o1, Nurse o2) {
+                if(o1.getLevelNurse()> o2.getLevelNurse()){
+                    return 1;
+                }
+                else if(o1.getLevelNurse()< o2.getLevelNurse()){
+                    return -1;
+                }
+                else {
+                    return o1.getIdNurse().compareTo(o2.getIdNurse());
+                }
+            }
+        });
+        showNurse();
     }
 
-    public double getWeight() {
-        return weight;
+    public void sortByAgeNurse(){
+        Collections.sort(nurseList, new Comparator<Nurse>() {
+            @Override
+            public int compare(Nurse o1, Nurse o2) {
+                if(o1.getAge()> o2.getAge()){
+                    return 1;
+                }
+                else if(o1.getAge()< o2.getAge()){
+                    return -1;
+                }
+                else {
+                    return o1.getName().compareTo(o2.getName());
+                }
+            }
+        });
+        showNurse();
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public Nurse updateNurseById() {
+        System.out.print("nhập tìm theo mã y tá: ");
+        String idNurse = scanner.nextLine();
+        System.out.println("----------------------------------------");
+        for (Nurse nurse : nurseList) {
+            if (nurse.getIdNurse().equals(idNurse)) {
+                ioScanner.updateNurse(nurse);
+            }
+        }
+        System.out.println("không tìm thấy mã y tá cần sửa!!!");
+        return null;
     }
 
-    public int getDaysInHospital() {
-        return daysInHospital;
+    public void deleteByIdNurse(){
+        System.out.print("nhập tìm mã: ");
+        String id = scanner.nextLine();
+        for (Nurse nurse : nurseList) {
+            if (nurse.getIdNurse().equals(id)) {
+                nurseList.remove(nurse);
+            }
+        }
     }
 
-    public void setDaysInHospital(int daysInHospital) {
-        this.daysInHospital = daysInHospital;
-    }
-
-    public String getTypeRoom() {
-        return typeRoom;
-    }
-
-    public void setTypeRoom(String typeRoom) {
-        this.typeRoom = typeRoom;
-    }
-
-    public int getIdRoom() {
-        return idRoom;
-    }
-
-    public void setIdRoom(int idRoom) {
-        this.idRoom = idRoom;
-    }
-
-    @Override
-    public String toString() {
-        return "Bệnh nhân {" +
-                "Mã bệnh nhân='" + diseases + '\'' +
-                ", Tên='" + super.getName() + '\'' +
-                ", Tuổi=" + super.getAge() +
-                ", Địa chỉ='" + super.getAddress() + '\'' +
-                ", Giới tính=" + super.getGender() +
-                ", Số điện thoại='" + super.getPhone() + '\'' + "\n" +
-                " Bệnh tật='" + diseases + '\'' +
-                ", Trạng thái='" + status + '\'' +
-                ", Chiều cao='" + height + '\'' +
-                ", Cân nặng='" + weight + '\'' + "\n" +
-                " Số ngày nhập viện='" + daysInHospital + '\'' +
-                ", Loại phòng='" + typeRoom + '\'' +
-                ", Số phòng='" + idRoom + '\'' +
-                '}';
-    }
 }
