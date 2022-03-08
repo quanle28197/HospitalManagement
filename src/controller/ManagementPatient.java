@@ -1,4 +1,12 @@
-public class ManagementPatient implements Serializable {
+package controller;
+
+import model.Doctor;
+import model.Patient;
+
+import java.io.Serializable;
+import java.util.*;
+
+public class ManagementPatient<IOScanner> implements Serializable {
     public List<Patient> patientList;
     Scanner scanner = new Scanner(System.in);
     IOScanner ioScanner = new IOScanner();
@@ -6,7 +14,6 @@ public class ManagementPatient implements Serializable {
     public ManagementPatient() {
         this.patientList = new ArrayList<>();
     }
-
 
     public void showPatient() {
         for (Patient patient : patientList) {
@@ -19,11 +26,11 @@ public class ManagementPatient implements Serializable {
     }
 
     public void findByIdPatient() {
-        System.out.print("nhập mã bệnh nhân cần tìm: ");
+        System.out.println("Enter patient code to find");
         String id = scanner.nextLine();
         int count = 0;
         for (Patient patient : patientList) {
-            if (patient.getIdPatitent().equals(id)) {
+            if (patient.getIdPatient().equals(id)) {
                 System.out.println(patient);
                 count++;
             }
@@ -31,7 +38,7 @@ public class ManagementPatient implements Serializable {
     }
 
     public void findByNamePatient() {
-        System.out.print("nhập tên cần tìm: ");
+        System.out.println("Enter name to find: ");
         String name = scanner.nextLine();
         int count = 0;
         for (Patient patient : patientList) {
@@ -43,7 +50,7 @@ public class ManagementPatient implements Serializable {
     }
 
     public void findByAgePatient() {
-        System.out.print("nhập số tuổi cần tìm: ");
+        System.out.println("Enter age to find : ");
         int age = scanner.nextInt();
         scanner.nextLine();
         int count = 0;
@@ -56,7 +63,7 @@ public class ManagementPatient implements Serializable {
     }
 
     public void findByPhonePatient() {
-        System.out.print("nhập số điện thoại cần tìm: ");
+        System.out.println("Enter phone number to find: ");
         String phone = scanner.nextLine();
         int count = 0;
         for (Patient patient : patientList) {
@@ -68,7 +75,7 @@ public class ManagementPatient implements Serializable {
     }
 
     public void findByAddressPatient() {
-        System.out.print("nhập địa chỉ cần tìm: ");
+        System.out.println("Enter address to find: ");
         String address = scanner.nextLine();
         int count = 0;
         for (Patient patient : patientList) {
@@ -79,19 +86,7 @@ public class ManagementPatient implements Serializable {
         }
     }
 
-    //sắp theo mã
-    public void sortByIdPatitent() {
-        Collections.sort(patientList, new Comparator<Patient>() {
-            @Override
-            public int compare(Patient o1, Patient o2) {
-                return o1.getIdPatitent().compareTo(o2.getIdPatitent());
-            }
-        });
-        showPatient();
-    }
-
-    //sắp theo tên
-    public void sortByNamePatitent() {
+    public void sortbyNamePatient() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
             public int compare(Patient o1, Patient o2) {
@@ -101,8 +96,7 @@ public class ManagementPatient implements Serializable {
         showPatient();
     }
 
-    //sắp theo bệnh
-    public void sortByDiseasesPatitent() {
+    public void sortDiseasesPatient() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
             public int compare(Patient o1, Patient o2) {
@@ -112,8 +106,7 @@ public class ManagementPatient implements Serializable {
         showPatient();
     }
 
-    //sắp theo loại phòng
-    public void sortByTypeRoomPatitent() {
+    public void sortByTypeRoomPatient() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
             public int compare(Patient o1, Patient o2) {
@@ -123,24 +116,22 @@ public class ManagementPatient implements Serializable {
         showPatient();
     }
 
-    //sắp theo số ngày ở viện
-    public void sortByDaysInHospital() {
+    public void sortByDayInHospital() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
             public int compare(Patient o1, Patient o2) {
-                if (o1.getDaysInHospital() > o2.getDaysInHospital()) {
+                if (o1.getDayInHospital() > o2.getDayInHospital()) {
                     return 1;
-                } else if (o1.getDaysInHospital() < o2.getDaysInHospital()) {
+                } else if (o1.getDayInHospital() < o2.getDayInHospital()) {
                     return -1;
                 } else {
-                    return o1.getIdPatitent().compareTo(o2.getIdPatitent());
+                    return o1.getIdPatient().compareTo(o2.getIdPatient());
                 }
             }
         });
         showPatient();
     }
 
-    //sắp theo số phòng
     public void sortByIdRoom() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
@@ -150,14 +141,13 @@ public class ManagementPatient implements Serializable {
                 } else if (o1.getIdRoom() < o2.getIdRoom()) {
                     return -1;
                 } else {
-                    return o1.getIdPatitent().compareTo(o2.getIdPatitent());
+                    return o1.getIdPatient().compareTo(o2.getIdPatient());
                 }
             }
         });
         showPatient();
     }
 
-    //sắp theo tuổi
     public void sortByAgePatient() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
@@ -175,20 +165,20 @@ public class ManagementPatient implements Serializable {
     }
 
     public Doctor updatePatientById() {
-        System.out.print("nhập tìm theo mã bệnh nhân: ");
+        System.out.println("Search by patient code:  ");
         String idPatient = scanner.nextLine();
-        System.out.println("----------------------------------------");
+        System.out.println("-------------------------------");
         for (Patient patient : patientList) {
-            if (patient.getIdPatitent().equals(idPatient)) {
+            if (patient.getIdPatient().equals(idPatient)) {
                 ioScanner.updatePatient(patient);
             }
         }
-        System.out.println("không tìm thấy mã bác sĩ cần sửa!!!");
+        System.out.println("Can't find code to edit!!!");
         return null;
     }
 
     public void deleteByIdPatient(){
-        System.out.print("nhập tìm mã: ");
+        System.out.print("Enter to find by code: ");
         String id = scanner.nextLine();
         for (Patient patient : patientList) {
             if (patient.getIdPatitent().equals(id)) {

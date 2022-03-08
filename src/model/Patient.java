@@ -40,4 +40,87 @@ public class Patient extends Person implements Serializable {
         this.typeRoom = typeRoom;
         this.idRoom = idRoom;
     }
-}
+
+    public String getIdPatient() {
+        return idPatient;
+    }
+
+    public void setIdPatient(String idPatient) {
+        this.idPatient = idPatient;
+    }
+
+    public String getDiseases() {
+        return diseases;
+    }
+
+    public void setDiseases(String diseases) {
+        this.diseases = diseases;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public int getDayInHospital() {
+        return dayInHospital;
+    }
+
+    public void setDayInHospital(int dayInHospital) {
+        this.dayInHospital = dayInHospital;
+    }
+
+    public String getTypeRoom() {
+        return typeRoom;
+    }
+
+    public void setTypeRoom(String typeRoom) {
+        this.typeRoom = typeRoom;
+    }
+
+    public int getIdRoom() {
+        return idRoom;
+    }
+
+    public void setIdRoom(int idRoom) {
+        this.idRoom = idRoom;
+    }
+
+    @Override
+    public String toString() {
+        return "Patient {" +
+                "idPatient ='" + diseases + '\'' +
+                ", Name ='" + super.getName() + '\'' +
+                ", Age =" + super.getAge() +
+                ", Address ='" + super.getAddress() + '\'' +
+                ", Gender =" + super.getGender() +
+                ", Phone number ='" + super.getPhone() + '\'' + "\n" +
+                " Diseases ='" + diseases + '\'' +
+                ", Status ='" + status + '\'' +
+                ", Height ='" + height + '\'' +
+                ", Weight ='" + weight + '\'' + "\n" +
+                " Day in hospital ='" + dayInHospital + '\'' +
+                ", Type of room ='" + typeRoom + '\'' +
+                ", Id Room='" + idRoom + '\'' +
+                '}';
+    }
+    }
