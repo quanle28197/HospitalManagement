@@ -6,7 +6,7 @@ import model.Patient;
 import java.io.Serializable;
 import java.util.*;
 
-public class ManagementPatient<IOScanner> implements Serializable {
+public class ManagementPatient implements Serializable {
     public List<Patient> patientList;
     Scanner scanner = new Scanner(System.in);
     IOScanner ioScanner = new IOScanner();

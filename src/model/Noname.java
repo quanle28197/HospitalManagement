@@ -1,198 +1,159 @@
-public class ManagementPatient implements Serializable {
-    public List<Patient> patientList;
+public class MangamentPreventiveDoctor implements Serializable {
+    public List<PreventiveDoctor> preventiveDoctorList;
     Scanner scanner = new Scanner(System.in);
     IOScanner ioScanner = new IOScanner();
 
-    public ManagementPatient() {
-        this.patientList = new ArrayList<>();
+    public MangamentPreventiveDoctor() {
+        this.preventiveDoctorList = new ArrayList<>();
     }
 
 
-    public void showPatient() {
-        for (Patient patient : patientList) {
-            System.out.println(patientList.toString());
+    public void showpreventiveDoctor() {
+        for (PreventiveDoctor preventiveDoctors : preventiveDoctorList) {
+            System.out.println(preventiveDoctors.toString());
         }
     }
 
-    public void addPatient(Patient patient) {
-        this.patientList.add(patient);
+    public void addpreventiveDoctor(PreventiveDoctor preventiveDoctor) {
+        this.preventiveDoctorList.add(preventiveDoctor);
     }
 
-    public void findByIdPatient() {
-        System.out.print("nhập mã bệnh nhân cần tìm: ");
+    public void findByIdPreventiveDoctor(){
+        System.out.print("nhập mã bác sĩ dự bị cần tìm: ");
         String id = scanner.nextLine();
         int count = 0;
-        for (Patient patient : patientList) {
-            if (patient.getIdPatitent().equals(id)) {
-                System.out.println(patient);
+        for (PreventiveDoctor preventiveDoctor : preventiveDoctorList){
+            if(preventiveDoctor.getIdPreventiveDoctor().equals(id)){
+                System.out.println(preventiveDoctor);
                 count++;
             }
         }
     }
 
-    public void findByNamePatient() {
+    public void findByNamePreventiveDoctor(){
         System.out.print("nhập tên cần tìm: ");
         String name = scanner.nextLine();
         int count = 0;
-        for (Patient patient : patientList) {
-            if (patient.getName().equals(name)) {
-                System.out.println(patient);
+        for (PreventiveDoctor preventiveDoctor : preventiveDoctorList){
+            if(preventiveDoctor.getName().equals(name)){
+                System.out.println(preventiveDoctor);
                 count++;
             }
         }
     }
 
-    public void findByAgePatient() {
+    public void findByAgePreventiveDoctor(){
         System.out.print("nhập số tuổi cần tìm: ");
         int age = scanner.nextInt();
         scanner.nextLine();
         int count = 0;
-        for (Patient patient : patientList) {
-            if (patient.getAge() == age) {
-                System.out.println(patient);
+        for (PreventiveDoctor preventiveDoctor : preventiveDoctorList){
+            if(preventiveDoctor.getAge() == age){
+                System.out.println(preventiveDoctor);
                 count++;
             }
         }
     }
 
-    public void findByPhonePatient() {
+    public void findByPhonePreventiveDoctor(){
         System.out.print("nhập số điện thoại cần tìm: ");
         String phone = scanner.nextLine();
         int count = 0;
-        for (Patient patient : patientList) {
-            if (patient.getPhone().equals(phone)) {
-                System.out.println(patient);
+        for (PreventiveDoctor preventiveDoctor : preventiveDoctorList){
+            if(preventiveDoctor.getPhone().equals(phone)){
+                System.out.println(preventiveDoctor);
                 count++;
             }
         }
     }
 
-    public void findByAddressPatient() {
+    public void findByAddressPreventiveDoctor(){
         System.out.print("nhập địa chỉ cần tìm: ");
         String address = scanner.nextLine();
         int count = 0;
-        for (Patient patient : patientList) {
-            if (patient.getAddress().equals(address)) {
-                System.out.println(patient);
+        for (PreventiveDoctor preventiveDoctor : preventiveDoctorList){
+            if(preventiveDoctor.getAddress().equals(address)){
+                System.out.println(preventiveDoctor);
                 count++;
             }
         }
     }
 
-    //sắp theo mã
-    public void sortByIdPatitent() {
-        Collections.sort(patientList, new Comparator<Patient>() {
+    public void sortByIdPreventiveDoctor(){
+        Collections.sort(preventiveDoctorList, new Comparator<PreventiveDoctor>() {
             @Override
-            public int compare(Patient o1, Patient o2) {
-                return o1.getIdPatitent().compareTo(o2.getIdPatitent());
+            public int compare(PreventiveDoctor o1, PreventiveDoctor o2) {
+                return o1.getIdPreventiveDoctor().compareTo(o2.getIdPreventiveDoctor());
             }
         });
-        showPatient();
+        showpreventiveDoctor();
     }
 
-    //sắp theo tên
-    public void sortByNamePatitent() {
-        Collections.sort(patientList, new Comparator<Patient>() {
+    public void sortByNamePreventiveDoctor(){
+        Collections.sort(preventiveDoctorList, new Comparator<PreventiveDoctor>() {
             @Override
-            public int compare(Patient o1, Patient o2) {
+            public int compare(PreventiveDoctor o1, PreventiveDoctor o2) {
                 return o1.getName().compareTo(o2.getName());
             }
         });
-        showPatient();
+        showpreventiveDoctor();
     }
 
-    //sắp theo bệnh
-    public void sortByDiseasesPatitent() {
-        Collections.sort(patientList, new Comparator<Patient>() {
+    public void sortByAgePreventiveDoctor(){
+        Collections.sort(preventiveDoctorList, new Comparator<PreventiveDoctor>() {
             @Override
-            public int compare(Patient o1, Patient o2) {
-                return o1.getDiseases().compareTo(o2.getDiseases());
-            }
-        });
-        showPatient();
-    }
-
-    //sắp theo loại phòng
-    public void sortByTypeRoomPatitent() {
-        Collections.sort(patientList, new Comparator<Patient>() {
-            @Override
-            public int compare(Patient o1, Patient o2) {
-                return o1.getTypeRoom().compareTo(o2.getTypeRoom());
-            }
-        });
-        showPatient();
-    }
-
-    //sắp theo số ngày ở viện
-    public void sortByDaysInHospital() {
-        Collections.sort(patientList, new Comparator<Patient>() {
-            @Override
-            public int compare(Patient o1, Patient o2) {
-                if (o1.getDaysInHospital() > o2.getDaysInHospital()) {
+            public int compare(PreventiveDoctor o1, PreventiveDoctor o2) {
+                if(o1.getAge()> o2.getAge()){
                     return 1;
-                } else if (o1.getDaysInHospital() < o2.getDaysInHospital()) {
-                    return -1;
-                } else {
-                    return o1.getIdPatitent().compareTo(o2.getIdPatitent());
                 }
-            }
-        });
-        showPatient();
-    }
-
-    //sắp theo số phòng
-    public void sortByIdRoom() {
-        Collections.sort(patientList, new Comparator<Patient>() {
-            @Override
-            public int compare(Patient o1, Patient o2) {
-                if (o1.getIdRoom() > o2.getIdRoom()) {
-                    return 1;
-                } else if (o1.getIdRoom() < o2.getIdRoom()) {
+                else if(o1.getAge()< o2.getAge()){
                     return -1;
-                } else {
-                    return o1.getIdPatitent().compareTo(o2.getIdPatitent());
                 }
-            }
-        });
-        showPatient();
-    }
-
-    //sắp theo tuổi
-    public void sortByAgePatient() {
-        Collections.sort(patientList, new Comparator<Patient>() {
-            @Override
-            public int compare(Patient o1, Patient o2) {
-                if (o1.getAge() > o2.getAge()) {
-                    return 1;
-                } else if (o1.getAge() < o2.getAge()) {
-                    return -1;
-                } else {
+                else {
                     return o1.getName().compareTo(o2.getName());
                 }
             }
         });
-        showPatient();
+        showpreventiveDoctor();
     }
 
-    public Doctor updatePatientById() {
-        System.out.print("nhập tìm theo mã bệnh nhân: ");
-        String idPatient = scanner.nextLine();
+    public void sortByLevelSalaryPreventiveDoctor(){
+        Collections.sort(preventiveDoctorList, new Comparator<PreventiveDoctor>() {
+            @Override
+            public int compare(PreventiveDoctor o1, PreventiveDoctor o2) {
+                if(o1.getLevelSalaryPreventiveDoctor()> o2.getLevelSalaryPreventiveDoctor()){
+                    return 1;
+                }
+                else if(o1.getLevelSalaryPreventiveDoctor()< o2.getLevelSalaryPreventiveDoctor()){
+                    return -1;
+                }
+                else {
+                    return o1.getIdPreventiveDoctor().compareTo(o2.getIdPreventiveDoctor());
+                }
+            }
+        });
+        showpreventiveDoctor();
+    }
+
+    public PreventiveDoctor updatePreventiveDoctorById() {
+        System.out.print("nhập tìm theo mã bác sĩ dự phòng: ");
+        String idPreventiveDoctor = scanner.nextLine();
         System.out.println("----------------------------------------");
-        for (Patient patient : patientList) {
-            if (patient.getIdPatitent().equals(idPatient)) {
-                ioScanner.updatePatient(patient);
+        for (PreventiveDoctor preventiveDoctor : preventiveDoctorList) {
+            if (preventiveDoctor.getIdPreventiveDoctor().equals(idPreventiveDoctor)) {
+                ioScanner.updatePreventiveDoctor(preventiveDoctor);
             }
         }
         System.out.println("không tìm thấy mã bác sĩ cần sửa!!!");
         return null;
     }
 
-    public void deleteByIdPatient(){
+    public void deleteByIdPreventiveDoctor(){
         System.out.print("nhập tìm mã: ");
         String id = scanner.nextLine();
-        for (Patient patient : patientList) {
-            if (patient.getIdPatitent().equals(id)) {
-                patientList.remove(patient);
+        for (PreventiveDoctor preventiveDoctor : preventiveDoctorList) {
+            if (preventiveDoctor.getIdPreventiveDoctor().equals(id)) {
+                preventiveDoctorList.remove(preventiveDoctor);
             }
         }
     }

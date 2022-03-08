@@ -1,5 +1,9 @@
 package view;
 
+import controller.ManagementDoctor;
+import controller.ManagementNurse;
+import controller.ManagementPatient;
+
 import java.util.Scanner;
 
 import static view.Main.menu;
