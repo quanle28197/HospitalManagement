@@ -23,7 +23,7 @@ public class IOScanner {
         }
 
         System.out.println("Enter new age: ");
-       int newAge = scanner.nextLine();
+        int newAge = scanner.nextInt();
         scanner.nextLine();
         if (newAge != 0) {
             personUpdate.setAge(newAge);
@@ -120,6 +120,46 @@ public class IOScanner {
         String newDisease = scanner.nextLine();
         if (newDisease != null) {
             updatePatient.setDiseases(newDisease);
+        }
+
+        System.out.println("Enter new status: ");
+        String newStatus = scanner.nextLine();
+        if (newStatus != null) {
+            updatePatient.setStatus(newStatus);
+        }
+
+        System.out.println("Enter new height: ");
+        double newHeight = scanner.nextDouble();
+        scanner.nextLine();
+        if (newHeight != 0.0) {
+            updatePatient.setHeight(newHeight);
+        }
+
+        System.out.println("Enter new weight: ");
+        double newWeight = scanner.nextDouble();
+        scanner.nextLine();
+        if (newWeight != 0.0) {
+            updatePatient.setWeight(newWeight);
+        }
+
+        System.out.println("Enter new day in hospital : ");
+        int newDaysInHospital = scanner.nextInt();
+        scanner.nextLine();
+        if (newDaysInHospital != 0) {
+           updatePatient.setDayInHospital(newDaysInHospital);
+        }
+
+        System.out.println("nhập loại phòng (mới): ");
+        String newTypeRoom = scanner.nextLine();
+        if (newTypeRoom != null) {
+            updatePatient.setTypeRoom(newTypeRoom);
+        }
+
+        System.out.println("nhập số phòng (mới): ");
+        int newIdRoom = scanner.nextInt();
+        scanner.nextLine();
+        if (newIdRoom != 0) {
+            updatePatient.setIdRoom(newIdRoom);
         }
     }
 }
