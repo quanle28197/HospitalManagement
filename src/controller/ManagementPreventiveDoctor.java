@@ -14,7 +14,7 @@ public class ManagementPreventiveDoctor implements Serializable {
         this.preventiveDoctorList = new ArrayList<>();
     }
 
-    public void showpreventiveDoctor() {
+    public void showPreventiveDoctor() {
         for (PreventiveDoctor preventiveDoctors : preventiveDoctorList) {
             System.out.println(preventiveDoctors.toString());
         }
@@ -94,7 +94,7 @@ public class ManagementPreventiveDoctor implements Serializable {
         showpreventiveDoctor();
     }
 
-    public void sortbyNamePreventivceDoctor() {
+    public void sortByNamePreventiveDoctor() {
         Collections.sort(preventiveDoctorList, new Comparator<PreventiveDoctor>() {
             @Override
             public int compare(PreventiveDoctor o1, PreventiveDoctor o2) {

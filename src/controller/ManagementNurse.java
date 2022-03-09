@@ -16,7 +16,7 @@ public class ManagementNurse<IOScanner> implements Serializable {
 
     public void showNurse() {
         for (Nurse nurse : nurseList) {
-            System.out.println(nurses.toString());
+            System.out.println(nurse.toString());
         }
     }
 
@@ -50,7 +50,7 @@ public class ManagementNurse<IOScanner> implements Serializable {
 
     public void findByAgeNurse() {
         System.out.println("Enter age to find");
-        String age = scanner.nextLine();
+        int age = scanner.nextInt();
         scanner.nextLine();
         int count = 0;
         for (Nurse nurse : nurseList) {

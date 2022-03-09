@@ -1,10 +1,7 @@
 package view;
 
-import controller.ManagementDoctor;
-import controller.ManagementNurse;
-import controller.ManagementPatient;
-import model.Doctor;
-import model.Person;
+import controller.*;
+import model.*;
 
 import java.util.Scanner;
 
@@ -14,7 +11,7 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
     public static ManagementPerson managementPerson = new ManagementPerson();
     public static ManagementDoctor managementDoctor = new ManagementDoctor();
-    public static ManagamentPreventiveDoctor managamentPreventiveDoctor = new ManagamentPreventiveDoctor();
+    public static ManagementPreventiveDoctor managementPreventiveDoctor = new ManagementPreventiveDoctor();
     public static ManagementNurse managementNurse = new ManagementNurse();
     public static ManagementPatient managementPatient = new ManagementPatient();
     public static IOFile ioFile = new IOFile();
@@ -73,7 +70,7 @@ public class Main {
                         break;
                         case "b": {
                             System.out.println("Show list of preventive doctors");
-                            mangamentPreventiveDoctor.showpreventiveDoctor();
+                            managamentPreventiveDoctor.showpreventiveDoctor();
                         }
                         break;
                         case "c": {
@@ -143,23 +140,23 @@ public class Main {
                             String pick = scanner.nextLine();
                             switch (pick) {
                                 case "1": {
-                                    mangamentPreventiveDoctor.findByIdPreventiveDoctor();
+                                    managamentPreventiveDoctor.findByIdPreventiveDoctor();
                                 }
                                 break;
                                 case "2": {
-                                    mangamentPreventiveDoctor.findByNamePreventiveDoctor();
+                                    managamentPreventiveDoctor.findByNamePreventiveDoctor();
                                 }
                                 break;
                                 case "3": {
-                                    mangamentPreventiveDoctor.findByAgePreventiveDoctor();
+                                    managamentPreventiveDoctor.findByAgePreventiveDoctor();
                                 }
                                 break;
                                 case "4": {
-                                    mangamentPreventiveDoctor.findByAddressPreventiveDoctor();
+                                    managamentPreventiveDoctor.findByAddressPreventiveDoctor();
                                 }
                                 break;
                                 case "5": {
-                                    mangamentPreventiveDoctor.findByPhonePreventiveDoctor();
+                                    managamentPreventiveDoctor.findByPhonePreventiveDoctor();
                                 }
                                 break;
                                 default: {
@@ -236,7 +233,7 @@ public class Main {
                             String pick = scanner.nextLine();
                             switch (pick) {
                                 case "1": {
-                                    managementPerson.findByNameperson();
+                                    managementPerson.findByNamePerson();
                                 }
                                 break;
                                 case "2": {
@@ -305,11 +302,11 @@ public class Main {
                                 }
                                 break;
                                 case "2": {
-                                    mangamentPreventiveDoctor.sortByNamePreventiveDoctor();
+                                    managamentPreventiveDoctor.sortByNamePreventiveDoctor();
                                 }
                                 break;
                                 case "3": {
-                                    mangamentPreventiveDoctor.sortByAgePreventiveDoctor();
+                                    managamentPreventiveDoctor.sortByAgePreventiveDoctor();
                                 }
                                 break;
                                 default: {
@@ -405,7 +402,7 @@ public class Main {
                         }
                         break;
                         case "b": {
-                            mangamentPreventiveDoctor.updatePreventiveDoctorById();
+                            managamentPreventiveDoctor.updatePreventiveDoctorById();
                         }
                         break;
                         case "c": {
@@ -441,7 +438,7 @@ public class Main {
                         }
                         break;
                         case "b": {
-                            mangamentPreventiveDoctor.deleteByIdPreventiveDoctor();
+                            managementPreventiveDoctor.deleteByIdPreventiveDoctor();
                         }
                         break;
                         case "c": {
@@ -472,7 +469,7 @@ public class Main {
                         }
                         break;
                         case "b": {
-                            ioFile.writeFilePreventiveDoctor("File\\preventiveDoctor.csv", mangamentPreventiveDoctor.preventiveDoctorList);
+                            ioFile.writeFilePreventiveDoctor("File\\preventiveDoctor.csv", managementPreventiveDoctor.preventiveDoctorList);
                         }
                         break;
                         case "c": {
@@ -594,7 +591,7 @@ public class Main {
                 double height = scanner.nextDouble();
                 scanner.nextLine();
                 System.out.println("Enter weight: ");
-                double weight = scanner.nextDouble();break;
+                double weight = scanner.nextDouble();
                 scanner.nextLine();
                 System.out.println("Enter the number of days of hospitalization");
                 int dayInHospital = scanner.nextInt();
