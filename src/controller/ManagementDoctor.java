@@ -1,12 +1,14 @@
 package controller;
 
 import model.Doctor;
+import service.IOFile;
+import service.IOScanner;
 
 import javax.print.Doc;
 import java.io.Serializable;
 import java.util.*;
 
-public class ManagementDoctor<IOScanner, IOFile> implements Serializable {
+public class ManagementDoctor implements Serializable {
     public List<Doctor> doctorList;
     Scanner scanner = new Scanner(System.in);
     IOScanner ioScanner = new IOScanner();

@@ -2,6 +2,7 @@ package controller;
 
 import model.Doctor;
 import model.Patient;
+import service.IOScanner;
 
 import java.io.Serializable;
 import java.util.*;
@@ -86,7 +87,7 @@ public class ManagementPatient implements Serializable {
         }
     }
 
-    public void sortbyNamePatient() {
+    public void sortByNamePatient() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
             public int compare(Patient o1, Patient o2) {
@@ -96,7 +97,7 @@ public class ManagementPatient implements Serializable {
         showPatient();
     }
 
-    public void sortDiseasesPatient() {
+    public void sortByDiseasesPatient() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
             public int compare(Patient o1, Patient o2) {
@@ -116,7 +117,7 @@ public class ManagementPatient implements Serializable {
         showPatient();
     }
 
-    public void sortByDayInHospital() {
+    public void sortByDaysInHospital() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
             public int compare(Patient o1, Patient o2) {

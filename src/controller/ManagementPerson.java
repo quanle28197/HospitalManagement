@@ -1,6 +1,7 @@
 package controller;
 
 import model.Person;
+import service.IOScanner;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class ManagementPerson implements Serializable {
         this.personList.forEach(o -> System.out.println(o.toString()));
     }
 
-    public void findbyNamePerson() {
+    public void findByNamePerson() {
         System.out.println("Enter name to find: ");
         String name = scanner.nextLine();
         int count = 0;

@@ -2,6 +2,8 @@ package view;
 
 import controller.*;
 import model.*;
+import service.IOFile;
+import service.Validate;
 
 import java.util.Scanner;
 
@@ -70,7 +72,7 @@ public class Main {
                         break;
                         case "b": {
                             System.out.println("Show list of preventive doctors");
-                            managamentPreventiveDoctor.showpreventiveDoctor();
+                            managementPreventiveDoctor.showPreventiveDoctor();
                         }
                         break;
                         case "c": {
@@ -140,23 +142,23 @@ public class Main {
                             String pick = scanner.nextLine();
                             switch (pick) {
                                 case "1": {
-                                    managamentPreventiveDoctor.findByIdPreventiveDoctor();
+                                    managementPreventiveDoctor.findByIdPreventiveDoctor();
                                 }
                                 break;
                                 case "2": {
-                                    managamentPreventiveDoctor.findByNamePreventiveDoctor();
+                                    managementPreventiveDoctor.findByNamePreventiveDoctor();
                                 }
                                 break;
                                 case "3": {
-                                    managamentPreventiveDoctor.findByAgePreventiveDoctor();
+                                    managementPreventiveDoctor.findByAgePreventiveDoctor();
                                 }
                                 break;
                                 case "4": {
-                                    managamentPreventiveDoctor.findByAddressPreventiveDoctor();
+                                    managementPreventiveDoctor.findByAddressPreventiveDoctor();
                                 }
                                 break;
                                 case "5": {
-                                    managamentPreventiveDoctor.findByPhonePreventiveDoctor();
+                                    managementPreventiveDoctor.findByPhonePreventiveDoctor();
                                 }
                                 break;
                                 default: {
@@ -183,7 +185,7 @@ public class Main {
                                 }
                                 break;
                                 case "4": {
-                                    managementNurse.findbyAddressNurse();
+                                    managementNurse.findByAddressNurse();
                                 }
                                 break;
                                 case "5": {
@@ -222,7 +224,7 @@ public class Main {
                                 }
                                 break;
                                 default: {
-                                    System.out.printf("Wrong input! Re-enter again: ");
+                                    System.out.println("Wrong input! Re-enter again: ");
                                 }
                                 break;
                             }
@@ -298,15 +300,15 @@ public class Main {
                             String pick = scanner.nextLine();
                             switch (pick) {
                                 case "1": {
-                                    managamentPreventiveDoctor.sortByIdPreventiveDoctor();
+                                    managementPreventiveDoctor.sortByIdPreventiveDoctor();
                                 }
                                 break;
                                 case "2": {
-                                    managamentPreventiveDoctor.sortByNamePreventiveDoctor();
+                                    managementPreventiveDoctor.sortByNamePreventiveDoctor();
                                 }
                                 break;
                                 case "3": {
-                                    managamentPreventiveDoctor.sortByAgePreventiveDoctor();
+                                    managementPreventiveDoctor.sortByAgePreventiveDoctor();
                                 }
                                 break;
                                 default: {
@@ -348,18 +350,18 @@ public class Main {
                             String pick = scanner.nextLine();
                             switch (pick) {
                                 case "1": {
-                                    managementPatient.sortByIdPatitent();
+                                    managementPatient.sortByIdPatient();
                                 }
                                 break;
                                 case "2": {
-                                    managementPatient.sortByNamePatitent();
+                                    managementPatient.sortByNamePatient();
                                 }
                                 break;
                                 case "3": {
                                     managementPatient.sortByAgePatient();
                                 }
                                 case "4": {
-                                    managementPatient.sortByDiseasesPatitent();
+                                    managementPatient.sortByDiseasesPatient();
                                 }
                                 break;
                                 case "5": {
@@ -367,7 +369,7 @@ public class Main {
                                 }
                                 break;
                                 case "6": {
-                                    managementPatient.sortByTypeRoomPatitent();
+                                    managementPatient.sortByTypeRoomPatient();
                                 }
                                 break;
                                 case "7": {
@@ -402,7 +404,7 @@ public class Main {
                         }
                         break;
                         case "b": {
-                            managamentPreventiveDoctor.updatePreventiveDoctorById();
+                            managementPreventiveDoctor.updatePreventiveDoctorById();
                         }
                         break;
                         case "c": {
@@ -538,7 +540,7 @@ public class Main {
 
             public static void addDoctor() {
                 System.out.println("Enter doctor information: ");
-                Person person = inputinformation();
+                Person person = inputinformation;
                 System.out.println("Enter id doctor:  ");
                 String idDoctor = scanner.nextLine();
                 System.out.println("Enter position: ");
@@ -553,7 +555,7 @@ public class Main {
 
             public static void addPreventiveDoctor() {
                 System.out.println("Enter preventive doctor information");
-                Person person = inputinformation();
+                Person person = inputinformation;
                 System.out.println("Enter id preventive doctor:");
                 String idPreventiveDoctor = scanner.nextLine();
                 System.out.println("Enter position: ");
@@ -562,12 +564,12 @@ public class Main {
                 int levelSalaryPreventiveDoctor = scanner.nextInt();
                 PreventiveDoctor preventiveDoctor = new PreventiveDoctor(person, idPreventiveDoctor, positionPreventiveDoctor, levelSalaryPreventiveDoctor);
                 managementPerson.addPerson(preventiveDoctor);
-                managamentPreventiveDoctor.addpreventiveDoctor(preventiveDoctor);
+                managementPreventiveDoctor.addPreventiveDoctor(preventiveDoctor);
             }
 
             public static void addNurse() {
                 System.out.println("Enter nurse information: ");
-                Person person = inputinformation();
+                Person person = inputinformation;
                 System.out.println("Enter id nurse");
                 String idNurse = scanner.nextLine();
                 System.out.println("Enter salary level: ");
@@ -580,7 +582,7 @@ public class Main {
 
             public static void addPatient() {
                 System.out.println("Enter patient information");
-                Person person = inputinformation();
+                Person person = inputinformation;
                 System.out.println("Enter id patient: ");
                 String idPatient = scanner.nextLine();
                 System.out.println("Enter the name of the acquired disease");

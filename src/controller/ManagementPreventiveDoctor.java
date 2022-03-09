@@ -1,6 +1,7 @@
 package controller;
 
 import model.PreventiveDoctor;
+import service.IOScanner;
 
 import java.io.Serializable;
 import java.util.*;
