@@ -3,6 +3,8 @@ package view;
 import controller.ManagementDoctor;
 import controller.ManagementNurse;
 import controller.ManagementPatient;
+import model.Doctor;
+import model.Person;
 
 import java.util.Scanner;
 

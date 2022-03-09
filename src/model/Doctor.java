@@ -65,5 +65,5 @@ public class Doctor extends Person implements Serializable {
                 ", Salary Doctor='" + getSalaryDoctor() + '\'' +
                 '}';
     }
-    }
+
 }
