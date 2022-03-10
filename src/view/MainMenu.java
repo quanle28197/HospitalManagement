@@ -1,11 +1,7 @@
-package mainMenu;
+package view;
 
 import account.createAccount.CreateAccount;
 import account.login.Login;
-import controller.*;
-import model.*;
-import service.IOFile;
-import service.Validate;
 
 import java.io.IOException;
 import java.util.InputMismatchException;

@@ -1,9 +1,6 @@
 package service.AccountUser;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +9,7 @@ public class IOFileUser<E> {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(pathname);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.write(arrayData);
+            objectOutputStream.writeObject(arrayData);
             fileOutputStream.close();
             objectOutputStream.close();
         }catch (IOException e) {
@@ -24,10 +21,10 @@ public class IOFileUser<E> {
         List<E> userList = new ArrayList<>();
         try {
             FileInputStream fileInputStream = new FileInputStream(pathname);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileInputStream);
-            userList = (List<E>) objectOutputStream.readObject();
+            ObjectInputStream objectInputStream = new java.io.ObjectInputStream(fileInputStream);
+            userList = (List<E>) objectInputStream.readObject();
             fileInputStream.close();
-            objectOutputStream.close();
+            objectInputStream.close();
         } catch (IOException | ClassNotFoundException e) {
             System.err.println(e.getMessage());
         }
@@ -37,7 +34,7 @@ public class IOFileUser<E> {
     public void clearFileData(List<E> arrayData, String pathname) throws IOException {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(pathname);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(FileOutputStream);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);;
             objectOutputStream.writeObject(arrayData);
             fileOutputStream.close();
             objectOutputStream.close();

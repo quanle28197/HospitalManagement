@@ -2,6 +2,7 @@ package account.createAccount;
 
 import account.user.AccountUser;
 import account.user.AccountUserManagement;
+import view.Menu_User;
 
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class UserPersonalInformation {
         do {
             isValidNumber = true;
             try{
-                value = Interger.parseInt(scanner.nextLine());
+               value = Integer.parseInt(scanner.nextLine());
             }catch (NumberFormatException e) {
                 System.out.println("Wrong input, must be number!!");
                 System.out.println("Enter again");

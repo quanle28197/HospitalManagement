@@ -3,9 +3,9 @@ package account.login;
 import account.admin.AccountAdmin;
 import account.user.AccountUser;
 import account.user.AccountUserManagement;
-import mainMenu.MainMenu;
-import mainMenu.Menu_Admin;
-import mainMenu.Menu_User;
+import view.MainMenu;
+import view.Menu_Admin;
+import view.Menu_User;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -70,7 +70,7 @@ public class Login {
     }
 
     private boolean checkAccountAdminLoginIn(String id, String password) {
-        for (AccountAdmin acc : accountAdmin.getAdminList()) {
+        for (AccountAdmin acc : accountAdmin.getAccountAccountAdminList()) {
             boolean check = id.equals(acc.getAdminId()) && password.equals(acc.getAdminPass());
             if (check) return true;
         }

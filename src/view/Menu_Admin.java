@@ -1,4 +1,4 @@
-package mainMenu;
+package view;
 
 import controller.*;
 import model.*;

@@ -105,22 +105,37 @@ public class Patient extends Person implements Serializable {
         this.idRoom = idRoom;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Patient {" +
+//                "idPatient ='" + diseases + '\'' +
+//                ", Name ='" + super.getName() + '\'' +
+//                ", Age =" + super.getAge() +
+//                ", Address ='" + super.getAddress() + '\'' +
+//                ", Gender =" + super.getGender() +
+//                ", Phone number ='" + super.getPhone() + '\'' + "\n" +
+//                " Diseases ='" + diseases + '\'' +
+//                ", Status ='" + status + '\'' +
+//                ", Height ='" + height + '\'' +
+//                ", Weight ='" + weight + '\'' + "\n" +
+//                " Day in hospital ='" + dayInHospital + '\'' +
+//                ", Type of room ='" + typeRoom + '\'' +
+//                ", Id Room='" + idRoom + '\'' +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
-        return "Patient {" +
-                "idPatient ='" + diseases + '\'' +
-                ", Name ='" + super.getName() + '\'' +
-                ", Age =" + super.getAge() +
-                ", Address ='" + super.getAddress() + '\'' +
-                ", Gender =" + super.getGender() +
-                ", Phone number ='" + super.getPhone() + '\'' + "\n" +
-                " Diseases ='" + diseases + '\'' +
-                ", Status ='" + status + '\'' +
-                ", Height ='" + height + '\'' +
-                ", Weight ='" + weight + '\'' + "\n" +
-                " Day in hospital ='" + dayInHospital + '\'' +
-                ", Type of room ='" + typeRoom + '\'' +
-                ", Id Room='" + idRoom + '\'' +
+        return "Patient{" +
+                "idPatient='" + idPatient + '\'' +
+                ", diseases='" + diseases + '\'' +
+                ", status='" + status + '\'' +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", dayInHospital=" + dayInHospital +
+                ", typeRoom='" + typeRoom + '\'' +
+                ", idRoom=" + idRoom +
                 '}';
     }
-    }
+}
