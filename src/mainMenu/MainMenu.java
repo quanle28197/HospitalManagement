@@ -12,7 +12,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainMenu {
-    public class MainMenu {
         Login login = new Login();
         CreateAccount createAccount = new CreateAccount();
 
@@ -46,6 +45,9 @@ public class MainMenu {
             } while (true);
         }
 
+        public static void main(String[] args) {
+            new MainMenu();
+        }
     }
-}
+
 

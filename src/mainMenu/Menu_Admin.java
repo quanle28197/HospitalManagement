@@ -17,8 +17,9 @@ public class Menu_Admin {
     public static ManagementPatient managementPatient = new ManagementPatient();
     public static IOFile ioFile = new IOFile();
     private static Validate validate = new Validate();
+    boolean isValidNumber;
 
-    public static void main(String[] args) {
+    public Menu_Admin() {
         String choice;
         do {
             menu();
