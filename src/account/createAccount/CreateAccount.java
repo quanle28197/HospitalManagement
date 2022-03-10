@@ -1,6 +1,8 @@
 package account.createAccount;
 
+import account.user.AccountUser;
 import account.user.AccountUserManagement;
+import mainMenu.MainMenu;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -30,7 +32,7 @@ public class CreateAccount {
         String secondPassword = scanner.nextLine();
         if (password.equals(secondPassword)) {
             if (checkIdUser(id)) {
-                FileWriter fw = new  FileWriter(id + ".txt");
+                FileWriter fw = new FileWriter(id + ".txt");
                 fw.write("");
                 fw.close();
                 FileWriter w1 = new FileWriter(id + "wallet.txt");
@@ -55,32 +57,34 @@ public class CreateAccount {
             System.out.println("Wrong password, enter again");
         }
     }
-}
 
-public static String checkValid() {
-    String value;
-    boolean check = false;
-    do {
-        value = scanner.nextLine();
-        if (patternId.matcher(value).matches()) {
-            check = true;
-        }else {
-            System.out.println("From 6 to 12 characters required");
-            System.out.println("Special character are not allow");
-            System.out.println("Enter again");
-        }
-    }while (!check);
-    return value;
-}
 
-public static boolean checkIdUser(String Id) {
-    if (accountUserManagement.getAccountUserList() != null) {
-        for (AccountUser acc : accountUserManagement.getAccountUserList()) {
-            boolean checkIdUser = id.equals(acc.getUserId());
-            if (checkIdUser) {
-                return false;
+    public static String checkValid() {
+        String value;
+        boolean check = false;
+        do {
+            value = scanner.nextLine();
+            if (patternId.matcher(value).matches()) {
+                check = true;
+            } else {
+                System.out.println("From 6 to 12 characters required");
+                System.out.println("Special character are not allow");
+                System.out.println("Enter again");
+            }
+        } while (!check);
+        return value;
+    }
+
+    public static boolean checkIdUser(String Id) {
+        if (accountUserManagement.getAccountUserList() != null) {
+            for (AccountUser acc : accountUserManagement.getAccountUserList()) {
+                boolean checkIdUser = id.equals(acc.getUserId());
+                if (checkIdUser) {
+                    return false;
+                }
             }
         }
+        return true;
     }
-    return true;
 }
+

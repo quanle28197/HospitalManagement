@@ -3,8 +3,8 @@ package account.login;
 import account.admin.AccountAdmin;
 import account.user.AccountUser;
 import account.user.AccountUserManagement;
-import mainmenu.MainMenu;
-import productlist_runbyadmin.view.Menu_Admin;
+import mainMenu.MainMenu;
+import mainMenu.Menu_Admin;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

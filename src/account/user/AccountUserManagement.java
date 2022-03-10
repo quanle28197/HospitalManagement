@@ -1,6 +1,6 @@
 package account.user;
 
-import ReadAndWriteFile.IOFile;
+import service.AccountUser.IOFileUser;
 import service.IOFile;
 
 import java.util.ArrayList;
@@ -8,14 +8,14 @@ import java.util.List;
 
 public class AccountUserManagement {
     private final List<AccountUser> accountUserList = new ArrayList<>();
-    private final IOFile<AccountUser> ioFile = new IOFile<>();
-    private final String PATHNAME_OF_ACCOUNTUSER = ;
+    private final IOFileUser<AccountUser> ioFileUser = new IOFileUser<>();
+    private final String PATHNAME_OF_ACCOUNTUSER = "lequan:\\IdeaProjects\\HospitalManagement\\";
 
     public AccountUserManagement() {
     }
 
     public List<AccountUser> getAccountUserList() {
-        return ioFile.readFileData(PATHNAME_OF_ACCOUNTUSER + "accountuser.txt");
+        return ioFileUser.readFileData(PATHNAME_OF_ACCOUNTUSER + "account-user.txt");
     }
 
     public boolean checkFile() {
@@ -27,7 +27,7 @@ public class AccountUserManagement {
     public void setNewListAccountUser(AccountUser user, int index) {
         List<AccountUser> accountUsers = getAccountUserList();
         accountUsers.set(index, user);
-        ioFile.writerFileData(accountUsers, PATHNAME_OF_ACCOUNTUSER + "accountuser.txt");
+        ioFileUser.writerFileData(accountUsers, PATHNAME_OF_ACCOUNTUSER + "account-user.txt");
     }
 
     public void setListAccountUser(String id, String password) {
@@ -38,7 +38,7 @@ public class AccountUserManagement {
             accountUsers = getAccountUserList();
         }
         accountUsers.add(new AccountUser(id, password));
-        ioFile.writerFileData(accountUsers, PATHNAME_OF_ACCOUNTUSER+ "accountuser.txt");
+        ioFileUser.writerFileData(accountUsers, PATHNAME_OF_ACCOUNTUSER+ "account-user.txt");
     }
 
     public static void main(String[] args) {
