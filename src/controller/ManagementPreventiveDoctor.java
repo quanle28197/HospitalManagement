@@ -92,7 +92,7 @@ public class ManagementPreventiveDoctor implements Serializable {
                 return o1.getIdPreventiveDoctor().compareTo(o2.getIdPreventiveDoctor());
             }
         });
-        showpreventiveDoctor();
+        showPreventiveDoctor();
     }
 
     public void sortByNamePreventiveDoctor() {
@@ -102,7 +102,7 @@ public class ManagementPreventiveDoctor implements Serializable {
                 return o1.getName().compareTo(o2.getName());
             }
         });
-        showpreventiveDoctor();
+        showPreventiveDoctor();
     }
 
     public void sortByLevelSalaryPreventiveDoctor() {
@@ -118,7 +118,7 @@ public class ManagementPreventiveDoctor implements Serializable {
                 }
             }
         });
-        showpreventiveDoctor();
+        showPreventiveDoctor();
     }
 
     public void sortByAgePreventiveDoctor() {
@@ -134,7 +134,7 @@ public class ManagementPreventiveDoctor implements Serializable {
                 }
             }
         });
-        showpreventiveDoctor();
+        showPreventiveDoctor();
     }
 
     public PreventiveDoctor updatePreventiveDoctorById() {

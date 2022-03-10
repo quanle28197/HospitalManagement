@@ -19,6 +19,24 @@ public class Doctor extends Person implements Serializable {
         this.salaryDoctor = salaryDoctor;
     }
 
+    public Doctor(String name, int age, String address, String gender, String phone, String idDoctor, String positionDoctor, int levelSalaryDoctor, int salaryDoctor) {
+        super(name, age, address, gender, phone);
+        this.idDoctor = idDoctor;
+        this.positionDoctor = positionDoctor;
+        this.levelSalaryDoctor = levelSalaryDoctor;
+        this.salaryDoctor = salaryDoctor;
+    }
+
+
+
+    public Doctor(Person person,String idDoctor, String positionDoctor, int levelSalaryDoctor) {
+        super(person.getName(), person.getAge(), person.getAddress(), person.getGender(), person.getPhone());
+        this.positionDoctor = positionDoctor;
+        this.levelSalaryDoctor = levelSalaryDoctor;
+        this.idDoctor = idDoctor;
+        this.salaryDoctor = salaryDoctor;
+    }
+
     public String getIdDoctor() {
         return idDoctor;
     }
@@ -54,15 +72,15 @@ public class Doctor extends Person implements Serializable {
     @Override
     public String toString() {
         return "Doctor {" +
-                "idDoctor='" + idDoctor + '\'' +
+                "idDoctor ='" + idDoctor + '\'' +
                 ", Name ='" + super.getName() + '\'' +
                 ", Age =" + super.getAge() +
                 ", Address ='" + super.getAddress() + '\'' +
                 ", Gender =" + super.getGender() +
                 ", Phone number ='" + super.getPhone() + '\'' +
-                ", Position='" + positionDoctor + '\'' +
-                ", Level Salary='" + levelSalaryDoctor + '\'' +
-                ", Salary Doctor='" + getSalaryDoctor() + '\'' +
+                ", Position ='" + positionDoctor + '\'' +
+                ", Level Salary ='" + levelSalaryDoctor + '\'' +
+                ", Salary Doctor ='" + getSalaryDoctor() + '\'' +
                 '}';
     }
 

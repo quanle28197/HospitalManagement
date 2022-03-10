@@ -97,6 +97,16 @@ public class ManagementPatient implements Serializable {
         showPatient();
     }
 
+    public void sortByIdPatient() {
+        Collections.sort(patientList, new Comparator<Patient>() {
+            @Override
+            public int compare(Patient o1, Patient o2) {
+                return o1.getIdPatient().compareTo(o2.getIdPatient());
+            }
+        });
+        showPatient();
+    }
+
     public void sortByDiseasesPatient() {
         Collections.sort(patientList, new Comparator<Patient>() {
             @Override
@@ -182,7 +192,7 @@ public class ManagementPatient implements Serializable {
         System.out.print("Enter to find by code: ");
         String id = scanner.nextLine();
         for (Patient patient : patientList) {
-            if (patient.getIdPatitent().equals(id)) {
+            if (patient.getIdPatient().equals(id)) {
                 patientList.remove(patient);
             }
         }

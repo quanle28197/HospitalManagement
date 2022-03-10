@@ -92,7 +92,7 @@ public class IOScanner {
         }
     }
 
-    public void updateNurse(Nurse updatenurse) {
+    public void updateNurse(Nurse updateNurse) {
         updatePerson(updateNurse);
         System.out.println("Enter new id: ");
         String newId = scanner.nextLine();
@@ -104,7 +104,7 @@ public class IOScanner {
         int newLevel = scanner.nextInt();
         scanner.nextLine();
         if (newLevel != 0) {
-            updatenurse.setLevelNurse(newLevel);
+            updateNurse.setLevelNurse(newLevel);
         }
     }
 
