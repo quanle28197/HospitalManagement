@@ -1,7 +1,6 @@
 package account.createAccount;
 
 import account.user.AccountUserManagement;
-import mainmenu.MainMenu;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -31,7 +30,7 @@ public class CreateAccount {
         String secondPassword = scanner.nextLine();
         if (password.equals(secondPassword)) {
             if (checkIdUser(id)) {
-                FileWriter fw = new FileWriter(id + ".txt");
+                FileWriter fw = new  FileWriter(id + ".txt");
                 fw.write("");
                 fw.close();
                 FileWriter w1 = new FileWriter(id + "wallet.txt");

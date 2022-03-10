@@ -149,13 +149,13 @@ public class IOScanner {
            updatePatient.setDayInHospital(newDaysInHospital);
         }
 
-        System.out.println("nhập loại phòng (mới): ");
+        System.out.println("Enter new type of room : ");
         String newTypeRoom = scanner.nextLine();
         if (newTypeRoom != null) {
             updatePatient.setTypeRoom(newTypeRoom);
         }
 
-        System.out.println("nhập số phòng (mới): ");
+        System.out.println("Enter new id room: ");
         int newIdRoom = scanner.nextInt();
         scanner.nextLine();
         if (newIdRoom != 0) {

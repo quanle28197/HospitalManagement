@@ -44,7 +44,7 @@ public class Login {
     private void checkAccount(String id, String password) {
         try {
             if (checkAccountAdminLoginIn(id, password)) {
-                System.out.println("  **** Login succes as Admin access Welcome!" + id + " ****  ");
+                System.out.println("  **** Login success as Admin access Welcome!" + id + " ****  ");
                 new Menu_Admin();
             }else if (checkAccountUserLoginIn(id, password)) {
                 System.out.println("**** Login success as User access. Welcome!" + id + "  ****  ");

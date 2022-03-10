@@ -8,12 +8,50 @@ import java.util.List;
 
 
 
-public class IOFile {
+public class IOFile<E> {
     List<Person> personList;
     List<Doctor> doctorList;
     List<PreventiveDoctor> preventiveDoctorList;
     List<Nurse> nurseList;
     List<Patient> patientList;
+
+    public void writerFileData(List<E> arrayData, String pathname) {
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(pathname);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.write(arrayData);
+            fileOutputStream.close();
+            objectOutputStream.close();
+        }catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public List<E> readFileData(String pathname) {
+        List<E> userList = new ArrayList<>();
+        try {
+            FileInputStream fileInputStream = new FileInputStream(pathname);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileInputStream);
+            userList = (List<E>) objectOutputStream.readObject();
+            fileInputStream.close();
+            objectOutputStream.close();
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+        return userList;
+    }
+
+    public void clearFileData(List<E> arrayData, String pathname) throws IOException {
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(pathname);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(arrayData);
+            fileOutputStream.close();
+            objectOutputStream.close();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 
     public IOFile() {
         personList = new ArrayList<>();
@@ -79,7 +117,7 @@ public class IOFile {
             outputStream.close();
             fileOutputStream.close();
         } catch (IOException ioException) {
-            System.out.println("ghi không thành công");
+            System.out.println("Write failed!!!");
         }
     }
 
@@ -90,7 +128,7 @@ public class IOFile {
             preventiveDoctorList = (List<PreventiveDoctor>) objectInputStream.readObject();
             System.out.println(preventiveDoctorList);
         } catch (Exception exception) {
-            System.out.println("đọc không thành công");
+            System.out.println("Read failed!!!");
         }
         return preventiveDoctorList;
     }
@@ -103,7 +141,7 @@ public class IOFile {
             outputStream.close();
             fileOutputStream.close();
         } catch (IOException ioException) {
-            System.out.println("ghi không thành công");
+            System.out.println("Write failed!!!");
         }
     }
 
@@ -114,7 +152,7 @@ public class IOFile {
             nurseList = (List<Nurse>) objectInputStream.readObject();
             System.out.println(nurseList);
         } catch (Exception exception) {
-            System.out.println("đọc không thành công");
+            System.out.println("Read failed!!!");
         }
         return nurseList;
     }
@@ -128,7 +166,7 @@ public class IOFile {
             outputStream.close();
             fileOutputStream.close();
         } catch (IOException ioException) {
-            System.out.println("ghi không thành công");
+            System.out.println("Write failed!!!");
         }
     }
 
@@ -139,7 +177,7 @@ public class IOFile {
             patientList = (List<Patient>) objectInputStream.readObject();
             System.out.println(patientList);
         } catch (Exception exception) {
-            System.out.println("đọc không thành công");
+            System.out.println("Read failed!!!");
         }
         return patientList;
     }

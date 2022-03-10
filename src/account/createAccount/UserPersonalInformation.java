@@ -35,7 +35,6 @@ public class UserPersonalInformation {
             System.out.println("-----{User's name : " + user.getName() + "                 }-----");
             System.out.println("-----{User's country : " + user.getCountry() + "                 }-----");
             System.out.println("-----{User's age : " + user.getAge() + "                 }-----");
-            System.out.println("-----{Balance available : "+ user.getAccountSummary() + "                 }-----");
             System.out.println("\\---------------------------------------------------/");
             System.out.println("| Choose 1 to edit your profile.                       ");
             System.out.println("| Choose 2 to back to Menu.                         ");
