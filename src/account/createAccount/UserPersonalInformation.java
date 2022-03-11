@@ -2,9 +2,13 @@ package account.createAccount;
 
 import account.user.AccountUser;
 import account.user.AccountUserManagement;
+import model.Patient;
 import view.Menu_User;
 
 import java.util.Scanner;
+
+import static view.Menu_Admin.managementPatient;
+import static view.Menu_Admin.managementPerson;
 
 public class UserPersonalInformation {
     public static Scanner scanner = new Scanner(System.in);
@@ -33,9 +37,12 @@ public class UserPersonalInformation {
             System.out.println("----|           PERSONAL INFORMATION           |----");
             System.out.println("----------------------------------------------------");
             System.out.println("|                    {  [*]  }                     |");
-            System.out.println("-----------{User's name : " + user.getName() + "}-----");
-            System.out.println("-----------{User's country : " + user.getDiseases() + "}-----");
-            System.out.println("-----------{User's age : " + user.getAge() + "}-----");
+            System.out.println("---------{     Patient's name : " + user.getName() + "        }-----");
+            System.out.println("---------{     Patient's diseases : " + user.getDiseases() + "      }-----");
+            System.out.println("---------{     Patient's age : " + user.getAge() + "           }-----");
+            System.out.println("---------{     Patient's status : " + user.getStatus() + "      }-----");
+            System.out.println("---------{     Patient's height : " + user.getHeight() + "           }-----");
+            System.out.println("---------{     Patient's weight : " + user.getWeight() + "           }-----");
             System.out.println("\\---------------------------------------------------/");
             System.out.println("| Choose 1 to edit your profile.                       ");
             System.out.println("| Choose 2 to back to Menu.                         ");
@@ -106,6 +113,7 @@ public class UserPersonalInformation {
         user.setTypeRoom(typeRoom);
         user.setIdRoom(idRoom);
         System.out.println("Edit Success:");
+        managementPatient.addPatient(new Patient());
         accountUserManagement.setNewListAccountUser(user, findIndexOfUser(user));
         String typeToExit;
         do {

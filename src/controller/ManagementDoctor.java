@@ -1,11 +1,9 @@
 package controller;
 
 import model.Doctor;
-import model.Patient;
 import service.IOFile;
 import service.IOScanner;
 
-import javax.print.Doc;
 import java.io.Serializable;
 import java.util.*;
 

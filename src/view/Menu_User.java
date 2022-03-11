@@ -26,10 +26,10 @@ public class Menu_User {
             System.out.println("-----------------------------------------------------------");
             System.out.println("   ---USER ARE LOGGING IN TO THE SYSTEM :" + user.getName() + "---");
             System.out.println("-----------------------------------------------------------");
-            System.out.println("|1. Add personnel ");
+            System.out.println("|1. Your profile ");
             System.out.println("|2. Edit personnel information");
             System.out.println("|0. Back to Main Menu                                     |");
-            System.out.println("\\_________________________________________________________//");
+            System.out.println("\\_________________________________________________________/");
             System.out.print("Make your choice: ");
             try{
                 int choice = Integer.parseInt(scanner.nextLine());
