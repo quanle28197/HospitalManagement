@@ -13,7 +13,6 @@ public class Patient extends Person implements Serializable {
     private int dayInHospital;
     private String typeRoom;
     private int idRoom;
-
     public Patient() {
     }
 
@@ -104,26 +103,6 @@ public class Patient extends Person implements Serializable {
     public void setIdRoom(int idRoom) {
         this.idRoom = idRoom;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Patient {" +
-//                "idPatient ='" + diseases + '\'' +
-//                ", Name ='" + super.getName() + '\'' +
-//                ", Age =" + super.getAge() +
-//                ", Address ='" + super.getAddress() + '\'' +
-//                ", Gender =" + super.getGender() +
-//                ", Phone number ='" + super.getPhone() + '\'' + "\n" +
-//                " Diseases ='" + diseases + '\'' +
-//                ", Status ='" + status + '\'' +
-//                ", Height ='" + height + '\'' +
-//                ", Weight ='" + weight + '\'' + "\n" +
-//                " Day in hospital ='" + dayInHospital + '\'' +
-//                ", Type of room ='" + typeRoom + '\'' +
-//                ", Id Room='" + idRoom + '\'' +
-//                '}';
-//    }
-
 
     @Override
     public String toString() {

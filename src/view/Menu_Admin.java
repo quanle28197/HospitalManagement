@@ -3,7 +3,7 @@ package view;
 import controller.*;
 import model.*;
 import service.IOFile;
-import service.Validate;
+import service.ReadAndWrite.Validate;
 
 import java.util.Scanner;
 
@@ -50,7 +50,7 @@ public class Menu_Admin {
                         }
                         break;
                         default: {
-                            System.out.println("Nhập sai! Yêu cầu nhập lại!");
+                            System.out.println("Wrong input dude! Type-againnnnnn!");
                         }
                         break;
                     }
@@ -489,7 +489,7 @@ public class Menu_Admin {
                         }
                         break;
                         default: {
-                            System.out.println("Nhập sai! Yêu cầu nhập lại!");
+                            System.out.println("Wrong input- Re-enter again!!!");
                         }
                         break;
                     }
@@ -559,7 +559,7 @@ public class Menu_Admin {
         int levelSalaryDoctor = scanner.nextInt();
         Doctor doctor = new Doctor(person, idDoctor, positionDoctor, levelSalaryDoctor);
         managementPerson.addPerson(doctor);
-//            managementDoctor.addDoctor(doctor);
+        managementDoctor.addDoctor(doctor);
     }
 
     //thêm bác sĩ dự phòng

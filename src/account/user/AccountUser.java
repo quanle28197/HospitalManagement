@@ -3,23 +3,34 @@ package account.user;
 import java.io.Serializable;
 
 public class AccountUser implements Serializable {
+//    private static final long serialVersionUID = -6500665823330706018L;
     private String userId;
     private String userPassword;
     private String name;
     private int age;
-    private String country;
-    private int accountSummary;
+    private String diseases;
+    private String status;
+    private double height;
+    private double weight;
+    private int dayInHospital;
+    private String typeRoom;
+    private int idRoom;
 
     public AccountUser(String userId, String userPassword) {
         this.userId = userId;
         this.userPassword = userPassword;
     }
 
-    public AccountUser(String name, int age, String country, int accountSummary) {
+    public AccountUser(String name, int age, String diseases, String status, double height, double weight, int dayInHospital, String typeRoom, int idRoom) {
         this.name = name;
         this.age = age;
-        this.country = country;
-        this.accountSummary = accountSummary;
+        this.diseases = diseases;
+        this.status = status;
+        this.height = height;
+        this.weight = weight;
+        this.dayInHospital = dayInHospital;
+        this.typeRoom = typeRoom;
+        this.idRoom = idRoom;
     }
 
     public String getUserId() {
@@ -54,19 +65,59 @@ public class AccountUser implements Serializable {
         this.age = age;
     }
 
-    public String getCountry() {
-        return country;
+    public String getDiseases() {
+        return diseases;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setDiseases(String diseases) {
+        this.diseases = diseases;
     }
 
-    public int getAccountSummary() {
-        return accountSummary;
+    public String getStatus() {
+        return status;
     }
 
-    public void setAccountSummary(int accountSummary) {
-        this.accountSummary = accountSummary;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public int getDayInHospital() {
+        return dayInHospital;
+    }
+
+    public void setDayInHospital(int dayInHospital) {
+        this.dayInHospital = dayInHospital;
+    }
+
+    public String getTypeRoom() {
+        return typeRoom;
+    }
+
+    public void setTypeRoom(String typeRoom) {
+        this.typeRoom = typeRoom;
+    }
+
+    public int getIdRoom() {
+        return idRoom;
+    }
+
+    public void setIdRoom(int idRoom) {
+        this.idRoom = idRoom;
     }
 }

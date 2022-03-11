@@ -41,9 +41,6 @@ public class CreateAccount {
                 if (checkIdUser(id)) {
                     FileWriter fw = new FileWriter(id + ".txt");
                     fw.write("");
-                    fw.close();FileWriter wl = new FileWriter(id + "wallet.txt");
-                    wl.write("");
-                    wl.close();
                     accountUserManagement.setListAccountUser(id, password);
                     System.out.println("Successfully create new account");
                     String typeToExit;

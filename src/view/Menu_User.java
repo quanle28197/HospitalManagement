@@ -4,7 +4,7 @@ import account.createAccount.UserPersonalInformation;
 import account.user.AccountUser;
 import controller.ManagementPatient;
 import service.IOFile;
-import service.Validate;
+import service.ReadAndWrite.Validate;
 
 import java.util.Scanner;
 
@@ -29,13 +29,13 @@ public class Menu_User {
             System.out.println("|1. Add personnel ");
             System.out.println("|2. Edit personnel information");
             System.out.println("|0. Back to Main Menu                                     |");
-            System.out.println("\\_________________________________________________________/");
+            System.out.println("\\_________________________________________________________//");
             System.out.print("Make your choice: ");
             try{
                 int choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
                     case 1:
-                        addPatient();
+                        userPersonalInformation.userDetail(user);
                         break;
                     case 2:
                         managementPatient.updatePatientById();
@@ -53,6 +53,4 @@ public class Menu_User {
             }
         }while (!isValidNumber);
     }
-
-
 }

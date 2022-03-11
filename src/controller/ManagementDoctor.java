@@ -1,6 +1,7 @@
 package controller;
 
 import model.Doctor;
+import model.Patient;
 import service.IOFile;
 import service.IOScanner;
 
@@ -13,6 +14,10 @@ public class ManagementDoctor implements Serializable {
     Scanner scanner = new Scanner(System.in);
     IOScanner ioScanner = new IOScanner();
     IOFile ioFile = new IOFile();
+
+    public void addDoctor(Doctor doctor) {
+        this.doctorList.add(doctor);
+    }
 
     public ManagementDoctor() {
         this.doctorList = new ArrayList<>();

@@ -1,4 +1,4 @@
-package service;
+package service.ReadAndWrite;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,6 +29,7 @@ public class Validate {
         Pattern patternGender = pattern.compile(GENDER_REGEX);
         Pattern patternPhone = pattern.compile(PHONE_REGEX);
         Pattern patternDoctor = pattern.compile(ID_DOCTOR_REGEX);
+        Pattern patternPreventiveDoctor = pattern.compile(ID_PREVENTIVE_REGEX);
         Pattern patternNurse = pattern.compile(ID_NURSE_REGEX);
         Pattern patternPatient = pattern.compile(ID_PATIENT_REGEX);
         Pattern patternPosition = pattern.compile(POSITION_REGEX);
