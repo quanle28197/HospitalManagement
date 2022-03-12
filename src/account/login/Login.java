@@ -4,8 +4,8 @@ import account.admin.AccountAdmin;
 import account.user.AccountUser;
 import account.user.AccountUserManagement;
 import view.MainMenu;
-import view.Menu_Admin;
-import view.Menu_User;
+import account.view.Menu_Admin;
+import account.view.Menu_User;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

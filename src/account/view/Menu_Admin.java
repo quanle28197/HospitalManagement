@@ -1,4 +1,4 @@
-package view;
+package account.view;
 
 import controller.*;
 import model.*;

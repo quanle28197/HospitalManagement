@@ -1,14 +1,13 @@
-package view;
+package account.view;
 
 import account.createAccount.UserPersonalInformation;
 import account.user.AccountUser;
 import controller.ManagementPatient;
 import service.IOFile;
 import service.ReadAndWrite.Validate;
+import view.MainMenu;
 
 import java.util.Scanner;
-
-import static view.Menu_Admin.addPatient;
 
 public class Menu_User {
     AccountUser user;
