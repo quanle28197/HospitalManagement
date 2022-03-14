@@ -3,7 +3,7 @@ package account.view;
 import account.createAccount.UserPersonalInformation;
 import account.user.AccountUser;
 import controller.ManagementPatient;
-import service.IOFile;
+import service.ReadAndWrite.IOFile;
 import service.ReadAndWrite.Validate;
 import view.MainMenu;
 

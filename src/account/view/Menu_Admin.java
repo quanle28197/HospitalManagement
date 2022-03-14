@@ -2,7 +2,7 @@ package account.view;
 
 import controller.*;
 import model.*;
-import service.IOFile;
+import service.ReadAndWrite.IOFile;
 import service.ReadAndWrite.Validate;
 
 import java.util.Scanner;

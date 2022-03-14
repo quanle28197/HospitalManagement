@@ -1,7 +1,7 @@
 package controller;
 
 import model.Nurse;
-import service.IOScanner;
+import service.ReadAndWrite.IOScanner;
 
 import java.io.Serializable;
 import java.util.*;

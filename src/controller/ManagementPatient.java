@@ -2,7 +2,7 @@ package controller;
 
 import model.Doctor;
 import model.Patient;
-import service.IOScanner;
+import service.ReadAndWrite.IOScanner;
 
 import java.io.Serializable;
 import java.util.*;

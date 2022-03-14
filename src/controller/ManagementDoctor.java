@@ -1,8 +1,8 @@
 package controller;
 
 import model.Doctor;
-import service.IOFile;
-import service.IOScanner;
+import service.ReadAndWrite.IOFile;
+import service.ReadAndWrite.IOScanner;
 
 import java.io.Serializable;
 import java.util.*;
