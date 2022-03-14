@@ -3,7 +3,6 @@ package account.user;
 import java.io.Serializable;
 
 public class AccountUser implements Serializable {
-//    private static final long serialVersionUID = -6500665823330706018L;
     private String userId;
     private String userPassword;
     private String name;

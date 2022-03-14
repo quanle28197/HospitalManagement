@@ -13,7 +13,6 @@ public class Menu_User {
     AccountUser user;
     Scanner scanner = new Scanner(System.in);
     UserPersonalInformation userPersonalInformation = new UserPersonalInformation();
-    public static ManagementPatient managementPatient = new ManagementPatient();
     public static IOFile ioFile = new IOFile();
     private static Validate validate = new Validate();
     boolean isValidNumber;
@@ -25,8 +24,7 @@ public class Menu_User {
             System.out.println("-----------------------------------------------------------");
             System.out.println("   ---USER ARE LOGGING IN TO THE SYSTEM :" + user.getName() + "---");
             System.out.println("-----------------------------------------------------------");
-            System.out.println("|1. Your profile ");
-            System.out.println("|2. Edit personnel information");
+            System.out.println("|1. Your profile                                          |");
             System.out.println("|0. Back to Main Menu                                     |");
             System.out.println("\\_________________________________________________________/");
             System.out.print("Make your choice: ");
@@ -35,9 +33,6 @@ public class Menu_User {
                 switch (choice) {
                     case 1:
                         userPersonalInformation.userDetail(user);
-                        break;
-                    case 2:
-                        managementPatient.updatePatientById();
                         break;
                     case 0:
                         new MainMenu();
